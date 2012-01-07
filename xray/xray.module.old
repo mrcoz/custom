@@ -1,0 +1,140 @@
+<?php
+
+/**
+ * @file
+ * Module file for the Xray: drupal hook demo for use in other modules.
+ */
+// Location of Form Elements
+// http://api.drupal.org/api/drupal/developer--topics--forms_api_reference.html/7
+
+/*
+ * Implements hook_form_alter
+ */
+function xray_form_alter(&$form, &$form_state, $form_id) {
+	$form['xray_display_form_id'] = array(
+	'#type' => 'item',
+	'#title' => t('Form ID'),
+	'#markup' => $form_id,
+	'#weight' => -100,
+	);
+}
+/*
+ * Implementing test code from "The definitive guide to Drupal 7"
+ * Theming Forms
+ * page: 329 - 337
+ * Forms can be used with template files, preprocess, process functions, and 
+ * alter hooks.
+ * Rendering Form Elements: element properties important to the theme layer:
+ * #theme, #theme wrappers
+ * Steps: 1. Find the form id (use xray module for this)
+ * Steps: 2. Implementing hook_theme, register the form ID as a theme hook
+ * Create an implementation of the hook_theme() in the theme's template.php file
+ * See bartik template.php file for details
+ * Theming forms with theme functions (page 334)
+ * 
+ */
+
+
+// hook_form_alter($form, $form_state, $form_id)
+// atc_cr_node_form - Form to Modify 
+// field_atc_lcs - Field to Hide (restrict Access)
+// field_gr_eng
+// field_gr_ead
+// field_gr_pur
+// field_gr_pad
+// field_gr_man
+// field_gr_mad
+// field_gr_it
+// field_gr_itad
+// field_gr_sal
+// field_gr_sad
+// field_gr_qual
+// field_gr_qad
+// field_gr_acc
+// field_gr_aad
+// field_gr_war
+// field_gr_wad
+
+/*
+* Implements hook_form_formid_alter
+* 
+* This function turns off the display of fields that are populated using rules and rules links, 
+* approval fields and approval dates.
+* 
+* @todo need to make this configurable on the system administration page 
+*/
+
+function xray_form_atc_cr_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['xray_display_form_id'] = array(
+  '#type' => 'item',
+  '#title' => t('Form ID2'),
+  '#markup' => $form_id,
+  '#weight' => -100,
+  );
+  
+// Testing Inline attributes  
+// field_reason_for_change
+// field_cost_of_change
+// field_cr_image
+// field_cr_filelist
+// field_trailermodels
+// body
+  //$form['field_cost_of_change'] = array(
+    // 'access' => false,
+    //'#attributes' => array('class' => array('container-inline')),
+  //);
+  
+
+  
+  $form['field_atc_lcs'] = array(
+    'access' => false,
+  );
+  $form['field_gr_eng'] = array(
+    'access' => false,
+  );
+  $form['field_gr_ead'] = array(
+    'access' => false,
+  );
+  $form['field_gr_pur'] = array(
+    'access' => false,
+  );
+  $form['field_gr_pad'] = array(
+    'access' => false,
+  );
+  $form['field_gr_man'] = array(
+      'access' => false,
+  );
+  $form['field_gr_mad'] = array(
+      'access' => false,
+  );
+  $form['field_gr_it'] = array(
+      'access' => false,
+  );
+  $form['field_gr_itad'] = array(
+      'access' => false,
+  );
+  $form['field_gr_sal'] = array(
+      'access' => false,
+  );
+  $form['field_gr_sad'] = array(
+      'access' => false,
+  );
+  $form['field_gr_qual'] = array(
+      'access' => false,
+  );
+  $form['field_gr_qad'] = array(
+      'access' => false,
+  );
+  $form['field_gr_acc'] = array(
+      'access' => false,
+  );
+  $form['field_gr_aad'] = array(
+      'access' => false,
+  );
+  $form['field_gr_war'] = array(
+        'access' => false,
+  );
+  $form['field_gr_wad'] = array(
+        'access' => false,
+  );
+}

@@ -1,0 +1,6 @@
+name = ATC Change Request
+description = Provides additional form elements for use with ATC Change Request content type
+core = 7.x
+version = "7.x-1.0-alfa"
+core = "7.x"
+project = "atc_cr"

@@ -1,0 +1,3 @@
+name = Xray
+description = Provides additional features to xyz
+core = 7.x

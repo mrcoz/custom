@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Module file for the Xray: drupal hook demo for use in other modules.
+ */
+// Location of Form Elements
+// http://api.drupal.org/api/drupal/developer--topics--forms_api_reference.html/7
+
+/*
+ * Implements hook_form_alter
+ */
+function xray_form_alter(&$form, &$form_state, $form_id) {
+	$form['xray_display_form_id'] = array(
+	'#type' => 'item',
+	'#title' => t('Form ID'),
+	'#markup' => $form_id,
+	'#weight' => -100,
+	);
+}
