@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ATC_CR feature.
+ */
+
+include_once('atc_cr.features.inc');
