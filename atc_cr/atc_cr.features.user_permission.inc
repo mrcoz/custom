@@ -321,6 +321,34 @@ function atc_cr_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: view any unpublished atc_cr content
+  $permissions['view any unpublished atc_cr content'] = array(
+    'name' => 'view any unpublished atc_cr content',
+    'roles' => array(
+      0 => 'Facilitor',
+      1 => 'GR - Accounting',
+      2 => 'GR - Engineering',
+      3 => 'GR - IT',
+      4 => 'GR - Manufacturing',
+      5 => 'GR - Purchasing',
+      6 => 'GR - Quality',
+      7 => 'GR - Sales',
+      8 => 'GR - Service',
+      9 => 'Initiator',
+      10 => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: view any unpublished content
+  $permissions['view any unpublished content'] = array(
+    'name' => 'view any unpublished content',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   // Exported permission: view own unpublished content
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
